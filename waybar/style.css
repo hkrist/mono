@@ -1,0 +1,87 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "SF UI Text", "SF Pro Text", -apple-system, sans-serif;
+    font-size: 12px;
+    min-height: 0;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+window#waybar {
+    background-color: rgba(10, 10, 10, 0.8);
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Espaciado general y limpio */
+#custom-launcher,
+#workspaces,
+#custom-player,
+#tray,
+#pulseaudio,
+#battery,
+#clock {
+    padding: 0 8px;
+    margin: 0 4px;
+    color: #cccccc;
+}
+
+#custom-launcher {
+    color: #ffffff;
+    font-size: 13px;
+}
+
+/* ==========================================================
+   ELIMINAR COMPLETAMENTE EL RESALTADO DE LOS ESCRITORIOS
+   ================================================---------- */
+#workspaces {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+#workspaces button {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: #555555; /* Inactivos muy sutiles */
+    padding: 0 5px;
+    transition: color 0.2s ease;
+}
+
+#workspaces button:hover {
+    background: transparent;
+    color: #aaaaaa;
+}
+
+#workspaces button.active {
+    background: transparent;
+    color: #ffffff; /* Solo texto blanco puro para el activo */
+    font-weight: bold;
+    border: none;
+    box-shadow: none;
+}
+
+#workspaces button.urgent {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* Reproductor con playerctl */
+#custom-player {
+    color: #888888;
+    font-style: italic;
+}
+
+/* Reloj y módulos */
+#clock {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+#pulseaudio:hover,
+#battery:hover,
+#tray > * {
+    color: #ffffff;
+}
