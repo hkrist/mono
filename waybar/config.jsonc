@@ -1,0 +1,68 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "spacing": 0,
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "custom/player"
+    ],
+    "modules-right": [
+        "tray",
+        "pulseaudio",
+        "battery",
+        "clock"
+    ],
+
+    "custom/launcher": {
+        "format": "󰣇",
+        "on-click": "wofi --show drun --show-icons",
+        "tooltip": false
+    },
+
+"hyprland/workspaces": {
+        "format": "{name}",
+        "all-outputs": true,
+        "active-only": false,
+        "on-click": "activate",
+        "sort-by-number": true,
+        "persistent-workspaces": {}
+    },
+
+    "custom/player": {
+        "format": "{}",
+        "exec": "playerctl metadata --format '{{artist}} - {{title}}' 2>/dev/null || echo ''",
+        "interval": 2,
+        "on-click": "playerctl play-pause",
+        "max-length": 35
+    },
+
+    "tray": {
+        "icon-size": 14,
+        "spacing": 6
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-scroll-up": "pamixer -i 1",
+        "on-scroll-down": "pamixer -d 1",
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+
+    "battery": {
+        "format": "{capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock": {
+        "format": "{:%H:%M}"
+    }
+}
